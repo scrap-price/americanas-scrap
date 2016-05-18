@@ -1,18 +1,19 @@
 ### Algoritmo de Web Scraping
 
-[![Gitter](https://badges.gitter.im/scrap-price/submarino-scrap.svg)](https://gitter.im/scrap-price/submarino-scrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-O **submarino-scrap** é um algoritmo utilizado para a obtenção de metadados relacionados à produtos da E-commerce Submarino à partir da URL.
+O **americanas-scrap** é um algoritmo utilizado para a obtenção de metadados relacionados à produtos da E-commerce Americanas à partir da URL.
 
 É feita uma leitura padronizada dos elementos da página do produto e, desta forma, obtidos os dados relativos ao mesmo. Atualmente os dados drenados pelo algoritmo são: Nome, Preço e Thumbnail.
+
+Este pacote é uma adaptação do **submarino-scrap**
 
 #### Exemplo prático
 
 ```js
- var subscrap = require('submarino-scrap');
- var url = "http://www.submarino.com.br/produto/124431005/smart-tv-led-65-samsung-65ju6000-ultra-hd-4k-com-conversor-digital-3-hdmi-2-usb-funcao-games-wi-fi";
+ var scrap = require('americanas-scrap');
+ var url = "http://www.americanas.com.br/produto/123670442/smartphone-motorola-moto-g-3-geracao-dual-chip-desbloqueado-android-5.1-tela-hd-5-memoria-interna-8gb-4g-camera-13mp-processador-quad-core-1.4ghz-preto";
  
- subscrap.getProduct(url).then(function(product) {
+ scrap.getProduct(url).then(function(product) {
     console.log(product);
  }, function(err) {
     console.log(err);
@@ -24,9 +25,9 @@ O **submarino-scrap** é um algoritmo utilizado para a obtenção de metadados r
 
 ```js
  { 
-   title: 'Smartphone Asus Live Dual Chip Desbloqueado Android 5 Tela 5" 16GB 3G 8MP e  TV Digital - Preto',
-   price: '788.4199829101562',
-   thumbnail: 'http://isuba1-a.akamaihd.net/produtos/01/00/item/124606/5/124606581SZ.jpg'
+   title: 'Smartphone Motorola Moto G 3ª Geração Dual Chip Desbloqueado Android 5.1 Tela HD 5" Memória Interna 8GB 4G Câmera 13MP Processador Quad Core 1.4GHz - Preto',
+   price: '899.0',
+   thumbnail: 'http://iacom1-a.akamaihd.net/produtos/01/00/item/123670/4/123670442_1GG.jpg'
  }
 ```
 
